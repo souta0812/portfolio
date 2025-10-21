@@ -1,0 +1,80 @@
+/* === WorkCard.module.css === */
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  /* カードに影をつけて立体感を出す */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+  overflow: hidden; /* 画像を角丸にするため */
+  display: flex;
+  flex-direction: column; /* 画像とコンテンツを縦に並べる */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-decoration: none; /* Linkコンポーネントで使う場合 */
+  color: inherit; /* 親から色を引き継ぐ */
+}
+
+/* ホバーエフェクト: 少し浮き上がり、影が濃くなる */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* デザイン案のグレーの四角 (画像プレースホルダー) */
+.imagePlaceholder {
+  width: 100%;
+  height: 200px; /* 高さを固定 (アスペクト比 16/9 とかにしても良い) */
+  background-color: #f0f0f0; /* デザイン案のグレー */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+/* もし実際の画像を入れる場合は、.imagePlaceholder を .imageContainer に変え、
+  中のimgタグに .image { width: 100%; height: auto; display: block; } などを適用します
+*/
+
+/* テキストコンテンツ部分 */
+.content {
+  padding: 1rem 1.5rem; /* 内側に余白 */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* カードの高さが揃わない場合、コンテンツ領域が伸びて高さを揃える */
+}
+
+/* 作品タイトル (WorkCard.jsxのh3) */
+.content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* 作品説明文 (WorkCard.jsxのp) */
+.content p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* 説明文の長さが違ってもタグが下に揃うようにする */
+}
+
+/* デザイン案のスクリブル（ぐちゃぐちゃ線）を模したタグ領域 */
+.tags {
+  display: flex;
+  flex-wrap: wrap; /* タグが多すぎたら折り返す */
+  gap: 0.5rem; /* タグ間の隙間 */
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee; /* 説明文との境界線 */
+}
+
+/* タグのプレースホルダー */
+.tagPlaceholder {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px; /* 角丸 */
+  font-size: 0.75rem;
+  font-weight: 500;
+}

@@ -1,0 +1,75 @@
+/* === モバイルファースト (デフォルト) === */
+.heroSection {
+  height: 100vh; /* 画面の高さいっぱいにする */
+  display: flex;
+  flex-direction: column; /* 要素を縦に並べる */
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.heroFace {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.scrollIndicator {
+  position: absolute; /* 画面下部に固定 */
+  bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+/* ナビゲーションセクション */
+.navSection {
+  display: grid;
+  /* モバイルでは縦1列 */
+  grid-template-columns: 1fr; 
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+.navBlock {
+  background-color: #f0f0f0; /* デザイン案のグレーの四角 */
+  padding: 4rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.navBlock:hover {
+  transform: translateY(-5px); /* ホバーエフェクト */
+}
+
+.footer {
+  background-color: black;
+  height: 60px; /* デザイン案の黒帯 */
+}
+
+
+/* === PC・タブレット用 (幅が768px以上) === */
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem; /* PCでは文字を大きく */
+  }
+
+  .navSection {
+    /* PCでは横2列 */
+    grid-template-columns: 1fr 1fr; 
+    padding: 4rem;
+    max-width: 1200px;
+    margin: 0 auto; /* 中央寄せ */
+  }
+}

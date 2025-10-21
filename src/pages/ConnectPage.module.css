@@ -1,0 +1,80 @@
+.pageContainer {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* === モバイルファースト (デフォルト) === */
+.contentWrapper {
+  display: flex;
+  flex-direction: column; /* モバイルでは縦積み */
+  gap: 3rem;
+}
+
+.info {
+  text-align: center;
+}
+
+.emailLink {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.form {
+  width: 100%;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box; /* paddingを含めてwidth 100%にする */
+}
+
+.submitButton {
+  background-color: black;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.submitButton:hover {
+  opacity: 0.8;
+}
+
+/* === PC・タブレット用 (幅が768px以上) === */
+@media (min-width: 768px) {
+  .contentWrapper {
+    flex-direction: row; /* PCでは横並び */
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .info {
+    flex-basis: 45%; /* 幅を45%に */
+    text-align: left;
+  }
+
+  .form {
+    flex-basis: 50%; /* 幅を50%に */
+  }
+}

@@ -1,0 +1,38 @@
+.pageContainer {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.skillsList {
+  display: flex;
+  flex-direction: column; /* モバイルでは縦積み */
+  gap: 2rem;
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column; /* モバイルではアイコンと説明を縦積み */
+  align-items: center; /* 中央寄せ */
+  gap: 1rem;
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.skillIcon {
+  font-size: 3rem;
+}
+
+.skillInfo {
+  text-align: center; /* モバイルでは中央寄せ */
+}
+
+/* === PC・タブレット用 (幅が600px以上) === */
+@media (min-width: 600px) {
+  .skillItem {
+    flex-direction: row; /* PCでは横並び */
+    align-items: flex-start; /* 左上寄せ */
+    text-align: left; /* PCでは左寄せ */
+  }
+}

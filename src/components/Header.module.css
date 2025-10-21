@@ -1,0 +1,53 @@
+.header {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between; /* 両端に寄せる */
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem; /* リンク間の隙間 */
+}
+
+.link {
+  text-decoration: none;
+  color: #aaa; /* 通常の色 */
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: white; /* ホバー時の色 */
+}
+
+.activeLink {
+  /* 現在表示中のページリンクのスタイル */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s; /* .linkのスタイルを引き継ぐ */
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+/* === モバイル用 === */
+@media (max-width: 600px) {
+  .header {
+    padding: 1rem;
+    flex-direction: column; /* ロゴとナビを縦積みに */
+    gap: 0.5rem;
+  }
+  .nav {
+    gap: 1rem;
+    justify-content: center; /* 中央寄せ */
+    width: 100%;
+  }
+}

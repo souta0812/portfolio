@@ -1,0 +1,22 @@
+.pageContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.heroSection {
+  /* ... デザイン案のイラスト部分のスタイル ... */
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.worksList {
+  display: grid;
+  /* これが強力なレスポンシブテクニックです。
+    ・最小300pxの幅を確保しつつ
+    ・画面幅いっぱいに (1fr)
+    ・自動で (auto-fit) カラム数を調整してくれます
+  */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}

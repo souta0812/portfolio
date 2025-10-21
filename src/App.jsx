@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import TitlePage from './pages/TitlePage';
+import TitlePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import WorksPage from './pages/WorksPage';
 import ConnectPage from './pages/ConnectPage';
