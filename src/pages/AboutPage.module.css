@@ -16,7 +16,17 @@
   text-align: center;
   font-size: 1.1rem;
   color: #555;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.outro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -59,6 +69,35 @@
   line-height: 1;
 }
 
+.Baby {
+  width: 200px; /* ←デザインに合わせて調整 */
+  height: auto;
+  border-radius: 8px;
+}
+
+.Elementary {
+  width: 200px; /* ←デザインに合わせて調整 */
+  height: auto;
+  border-radius: 8px;
+}
+
+.Junior_high {
+  width: 200px; /* ←デザインに合わせて調整 */
+  height: auto;
+  border-radius: 8px;
+}
+
+.High {
+  width: 100px; /* ←デザインに合わせて調整 */
+  height: auto;
+  border-radius: 8px;
+}
+
+.Now {
+  width: 250px; /* ←デザインに合わせて調整 */
+  height: auto;
+  border-radius: 8px;
+}
 
 /* === PC・タブレット用 (幅が768px以上) === */
 @media (min-width: 768px) {
@@ -74,15 +113,6 @@
     margin-bottom: 0; /* gridで管理するので不要に */
   }
   
-  /* 奇数番目(1, 3)のアイテムは左カラム */
-  .gridItem:nth-child(4n-3) {
-    grid-column: 1 / 2; /* 1列目 */
-  }
-  
-  /* 偶数番目(2, 4)のアイテムは右カラム */
-  .gridItem:nth-child(4n-1) {
-    grid-column: 3 / 4; /* 3列目 */
-  }
 
   /* イラストを右寄せ（左カラムの右端）にする */
   .gridItemLeft {
@@ -129,10 +159,6 @@
     font-size: 3rem;
     color: black;
     margin-top: -1.5rem; /* 最後の線と少し重ねる */
-    
-    /* 2列目 (中央線) に配置 */
-    grid-column: 2 / 3;
-    grid-row: 2 / 3; /* 2行目に配置 */
   }
   
   /* 1行目のイラストを中央揃えにするための微調整 */
@@ -140,9 +166,22 @@
      align-items: center; 
   }
 
-  /* 2行目の左テキストボックスを上揃えにする */
-  .gridItem:nth-child(5) { /* 2行目の左アイテム */
-     align-items: flex-start;
-     padding-top: 2rem;
+  /* 左アイテムは常に1列目へ */
+  .gridItemLeft {
+    grid-column: 1 / 2;
+    display: flex;
+    justify-content: flex-end; /* 右寄せ（線に近づける） */
+    align-items: flex-start; /* すべてのアイテムを上揃えにする */
+    padding: 1rem;
   }
+
+  /* 右アイテムは常に3列目へ */
+  .gridItemRight {
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-start; /* 左寄せ（線に近づける） */
+    align-items: flex-start; /* すべてのアイテムを上揃えにする */
+    padding: 1rem;
+  }
+
 }
