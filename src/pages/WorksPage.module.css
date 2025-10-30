@@ -7,7 +7,26 @@
 .heroSection {
   /* ... デザイン案のイラスト部分のスタイル ... */
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+}
+
+.giantImage {
+  width: 100%; /* 親要素の幅いっぱいに */
+  max-width: 1200px; /* PCで見た時に大きくなりすぎないように制御 */
+  height: auto; /* 縦横比を保つ */
+  display: block; /* 中央寄せのために block 要素にする */
+  margin: 0 auto; /* 中央寄せ */
+}
+
+.scrollIndicator {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 3rem; /* 作品リストとの間に余白 */
+  text-decoration: none;
+  color: #333; /* 色を再指定 */
 }
 
 .worksList {

@@ -70,7 +70,7 @@
 }
 
 .Baby {
-  width: 200px; /* ←デザインに合わせて調整 */
+  width: 150px; /* ←デザインに合わせて調整 */
   height: auto;
   border-radius: 8px;
 }
@@ -97,6 +97,20 @@
   width: 250px; /* ←デザインに合わせて調整 */
   height: auto;
   border-radius: 8px;
+}
+
+/* ダークモードに対応する場合の設定
+*/
+@media (prefers-color-scheme: dark) {
+  .textBox {
+    color: black;
+  }
+  .intro {
+    color: white;
+  }
+  .outro {
+    color: white;
+  }
 }
 
 /* === PC・タブレット用 (幅が768px以上) === */
@@ -161,6 +175,20 @@
     margin-top: -1.5rem; /* 最後の線と少し重ねる */
   }
   
+  /* ダークモードに対応する場合の設定
+  */
+  @media (prefers-color-scheme: dark) {
+    /* 線の本体 */
+    .timelineConnector::before {
+      background-color: white;
+    }
+  
+    /* デザイン案の矢印 */
+    .scrollArrow {
+      color: white;
+    }
+  }
+
   /* 1行目のイラストを中央揃えにするための微調整 */
   .gridItemLeft:first-child {
      align-items: center; 

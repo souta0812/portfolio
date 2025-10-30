@@ -39,10 +39,18 @@
   margin-top: 0.5rem;
 }
 
+@media (prefers-color-scheme: dark) {
+  .subtitle {
+    color: white;
+  }
+}
+
 .scrollIndicator {
   position: absolute; /* 画面下部に固定 */
   bottom: 2rem;
   font-size: 0.9rem;
+  text-decoration: none; /* リンクの下線を消す */
+  color: #555;
 }
 
 /* ナビゲーションセクション */

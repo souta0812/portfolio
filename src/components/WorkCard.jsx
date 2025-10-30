@@ -1,23 +1,40 @@
 import styles from './WorkCard.module.css';
 
 // props (引数) で作品データを受け取る
-const WorkCard = ({ title, description, imageUrl, tags }) => {
+const WorkCard = ({ title, description, imageUrl, tags, url }) => {
+
+  const Tag = url ? 'a' : 'div';
+  // ↓ 3. タグに渡すプロパティ（属性）を準備します
+  const cardProps = {
+    className: styles.card,
+    ...(url && { // urlがある時だけ、以下の属性を追加します
+      href: url,
+      target: '_blank', // リンクを新しいタブで開く
+      rel: 'noopener noreferrer' // セキュリティのための決まり文句
+    })
+  };
+
   return (
-    <div className={styles.card}>
+    <Tag {...cardProps}>
       <div className={styles.imagePlaceholder}>
-        {/* <img src={imageUrl} alt={title} /> */}
+        {imageUrl ? (
+          <img src={imageUrl} alt={title} className={styles.workImage} />
+        ) : (
+          <span>(画像なし)</span>
+        )}
       </div>
       <div className={styles.content}>
         <h3>{title}</h3>
         <p>{description}</p>
         <div className={styles.tags}>
-          {/* タグも配列で渡してmapで表示するのが良い */}
-          {/* {tags.map(tag => <span key={tag}>{tag}</span>)} */}
-          <span className={styles.tagPlaceholder}>Tag 1</span>
-          <span className={styles.tagPlaceholder}>Tag 2</span>
+          {tags.map(tag => (
+            <span key={tag} className={styles.tagPlaceholder}>
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
-    </div>
+    </Tag>
   );
 };
 export default WorkCard;
